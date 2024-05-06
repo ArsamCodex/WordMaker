@@ -26,8 +26,8 @@ namespace WordMaker
         private void button1_Click(object sender, EventArgs e)
         {
             names = $"{textBox1.Text} {textBox2.Text} {textBox3.Text} {textBox4.Text} {textBox5.Text} {textBox6.Text} {textBox7.Text} {textBox8.Text} {textBox9.Text} {textBox10.Text} {textBox11.Text} {textBox12.Text}";
-            List<string> differentOrders = GenerateDifferentOrders(names, 1000);
-            for (int i = 0; i < 10; i++)
+            List<string> differentOrders = GenerateDifferentOrders(names, int.Parse(textBox13.Text));
+            for (int i = 0; i < int.Parse(textBox13.Text); i++)
             {
                 richTextBox1.AppendText(differentOrders[i]);
 
@@ -70,7 +70,33 @@ namespace WordMaker
             return orders;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                saveFileDialog.Title = "Save Data";
+                saveFileDialog.DefaultExt = "txt"; // Set default extension to .txt
 
+                // Set initial directory to user's desktop
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+                // If the user selects a file and clicks OK
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Write the data to the selected file
+                        File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text);
+                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 
 

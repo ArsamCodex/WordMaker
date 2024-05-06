@@ -43,6 +43,9 @@
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
+            label2 = new Label();
+            textBox13 = new TextBox();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -56,12 +59,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 284);
+            button1.BackColor = Color.Red;
+            button1.Location = new Point(12, 313);
             button1.Name = "button1";
             button1.Size = new Size(487, 23);
             button1.TabIndex = 13;
             button1.Text = "Generate";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1
@@ -74,9 +78,9 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(31, 181);
+            richTextBox1.Location = new Point(12, 181);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(445, 96);
+            richTextBox1.Size = new Size(648, 115);
             richTextBox1.TabIndex = 15;
             richTextBox1.Text = "";
             // 
@@ -96,16 +100,16 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(12, 79);
+            textBox4.Location = new Point(515, 46);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(137, 23);
+            textBox4.Size = new Size(156, 23);
             textBox4.TabIndex = 18;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(173, 84);
+            textBox5.Location = new Point(12, 81);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(140, 23);
+            textBox5.Size = new Size(137, 23);
             textBox5.TabIndex = 19;
             // 
             // textBox6
@@ -117,16 +121,16 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(12, 110);
+            textBox7.Location = new Point(173, 84);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(137, 23);
+            textBox7.Size = new Size(140, 23);
             textBox7.TabIndex = 21;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(173, 113);
+            textBox8.Location = new Point(515, 81);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(140, 23);
+            textBox8.Size = new Size(156, 23);
             textBox8.TabIndex = 22;
             // 
             // textBox9
@@ -138,30 +142,60 @@
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(12, 148);
+            textBox10.Location = new Point(12, 114);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(137, 23);
             textBox10.TabIndex = 24;
             // 
             // textBox11
             // 
-            textBox11.Location = new Point(173, 152);
+            textBox11.Location = new Point(170, 114);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(140, 23);
+            textBox11.Size = new Size(143, 23);
             textBox11.TabIndex = 25;
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(343, 148);
+            textBox12.Location = new Point(515, 114);
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(156, 23);
             textBox12.TabIndex = 26;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 155);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 15);
+            label2.TabIndex = 27;
+            label2.Text = "How Many Words";
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(132, 152);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(100, 23);
+            textBox13.TabIndex = 28;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Lime;
+            button2.Location = new Point(505, 313);
+            button2.Name = "button2";
+            button2.Size = new Size(155, 23);
+            button2.TabIndex = 29;
+            button2.Text = "Save List";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(511, 337);
+            ClientSize = new Size(683, 337);
+            Controls.Add(button2);
+            Controls.Add(textBox13);
+            Controls.Add(label2);
             Controls.Add(textBox12);
             Controls.Add(textBox11);
             Controls.Add(textBox10);
@@ -201,5 +235,8 @@
         private TextBox textBox10;
         private TextBox textBox11;
         private TextBox textBox12;
+        private Label label2;
+        private TextBox textBox13;
+        private Button button2;
     }
 }
